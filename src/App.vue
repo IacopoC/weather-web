@@ -1,11 +1,10 @@
 <script setup>
-
+import Header from './components/Header.vue';
 </script>
 
 <template>
   <div class="container">
-    <h1 class="pt-4">Weather Web</h1>
-    <p>Weather forecast for a location</p>
+    <Header title="Weather Web"></Header>
   </div>
 </template>
 
