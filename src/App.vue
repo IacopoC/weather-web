@@ -7,7 +7,7 @@ import Footer from './components/Footer.vue';
   <main class="flex-shrink-0">
   <div class="container">
     <Header title="Weather Web"></Header>
-    <p>Content</p>
+    <p><a href="https://open-meteo.com/">Free Weather API</a></p>
   </div>
   </main>
   <Footer></Footer>
