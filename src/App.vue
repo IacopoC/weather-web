@@ -9,6 +9,8 @@ import WeatherToday from "@/components/weather/WeatherToday.vue";
   <div class="container">
     <Header title="Weather Web"></Header>
     <WeatherToday></WeatherToday>
+    <em>“Conversation about the weather is the last refuge of the unimaginative.”</em>
+    <p><strong>Oscar Wilde</strong></p>
     <p><a href="https://open-meteo.com/">Free Weather API</a></p>
   </div>
   </main>
