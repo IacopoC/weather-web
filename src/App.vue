@@ -13,6 +13,16 @@ import WeatherToday from "@/components/weather/WeatherToday.vue";
     <p><strong>Oscar Wilde</strong></p>
     <p><a href="https://open-meteo.com/">Free Weather API</a></p>
   </div>
+    <div class="my-5">
+      <div class="p-5 text-center bg-body-tertiary">
+        <div class="container py-5">
+          <em class="col-lg-8 mx-auto lead">
+            “Conversation about the weather is the last refuge of the unimaginative.”
+            <br><strong>Oscar Wilde</strong>
+          </em>
+        </div>
+      </div>
+    </div>
   </main>
   <Footer></Footer>
 </template>
