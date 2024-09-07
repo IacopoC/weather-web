@@ -41,9 +41,9 @@ export default {
 <template>
   <div>
     <p><strong>Weather Today</strong></p>
-  <p>Temperature: {{ temperature }} {{ temperature_unit }}</p>
-    <p>Wind speed: {{ wind }} {{ wind_unit }}</p>
+    <p>Temperature: {{ temperature }} {{ temperature_unit }}</p>
     <p>Temperature perception: {{ ap_temperature }} {{ ap_temperature_unit }}</p>
+    <p>Wind speed: {{ wind }} {{ wind_unit }}</p>
     <p>Rain: {{ rain }} {{ rain_unit }}</p>
     <p>Visibility: {{ visibility }} {{ visibility_unit }}</p>
   </div>
