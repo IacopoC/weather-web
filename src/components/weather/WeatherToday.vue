@@ -3,6 +3,8 @@ export default {
   name: "WeatherToday",
   data() {
     return {
+      isloading:'',
+      haserror:'',
       temperature: '',
       ap_temperature: '',
       rain:'',
@@ -16,6 +18,7 @@ export default {
     }
   },
   mounted() {
+    this.isloading = true;
     fetch('https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current=temperature_2m,apparent_temperature,rain,visibility,wind_speed_10m')
         .then(response => response.json())
         .then(data => {
@@ -32,21 +35,29 @@ export default {
           this.visibility_unit =data.current_units['visibility'];
         })
         .catch(error => {
-          console.error('Error:', error);
-        });
+          console.error('Sorry, an error occurred:', error);
+          this.haserror = true;
+        })
+        .finally(() => {
+      this.isloading = false;
+    });
   }
 }
 </script>
 
 <template>
-  <div>
+  <div v-if="isloading">Loading data, please wait...</div>
+   <div v-else>
     <p><strong>Weather Today</strong></p>
     <p>Temperature: {{ temperature }} {{ temperature_unit }}</p>
     <p>Temperature perception: {{ ap_temperature }} {{ ap_temperature_unit }}</p>
     <p>Wind speed: {{ wind }} {{ wind_unit }}</p>
     <p>Rain: {{ rain }} {{ rain_unit }}</p>
     <p>Visibility: {{ visibility }} {{ visibility_unit }}</p>
-  </div>
+    <div v-if="haserror">
+      Error in displaying weather data.
+    </div>
+   </div>
 </template>
 
 <style scoped lang="scss">
