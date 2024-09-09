@@ -52,16 +52,42 @@ export default {
 <template>
   <div v-if="isLoading">Loading data, please wait...</div>
    <div v-else>
-    <p><strong>Weather Today</strong></p>
-    <p>Temperature: {{ temperature }} {{ temperature_unit }}</p>
-    <p>Temperature perception: {{ ap_temperature }} {{ ap_temperature_unit }}</p>
-    <p>Humidity: {{ humidity }} {{ humidity_unit }}</p>
-    <p>Wind speed: {{ wind }} {{ wind_unit }}</p>
-    <p>Rain: {{ rain }} {{ rain_unit }}</p>
-    <p>Visibility: {{ visibility }} {{ visibility_unit }}</p>
-    <div v-if="hasError">
-      Error in displaying weather data. Try again later.
-    </div>
+     <h3><strong>Weather Today</strong></h3>
+     <div class="pt-4 row">
+       <div class="col-lg-4">
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+         <p class="pt-4"><strong>Temperature:</strong></p>
+         <p>{{ temperature }} {{ temperature_unit }}</p>
+       </div><!-- /.col-lg-4 -->
+       <div class="col-lg-4">
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+         <p class="pt-4"><strong>Temperature perception:</strong></p>
+         <p>{{ ap_temperature }} {{ ap_temperature_unit }}</p>
+       </div><!-- /.col-lg-4 -->
+       <div class="col-lg-4">
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+         <p class="pt-4"><strong>Humidity:</strong></p>
+         <p>{{ humidity }} {{ humidity_unit }}</p>
+       </div><!-- /.col-lg-4 -->
+       <div class="col-lg-4">
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+         <p class="pt-4"><strong>Wind speed:</strong></p>
+         <p>{{ wind }} {{ wind_unit }}</p>
+       </div><!-- /.col-lg-4 -->
+       <div class="col-lg-4">
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+         <p class="pt-4"><strong>Rain:</strong></p>
+         <p>{{ rain }} {{ rain_unit }}</p>
+       </div><!-- /.col-lg-4 -->
+       <div class="col-lg-4">
+         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+         <p class="pt-4"><strong>Visibility:</strong></p>
+         <p>{{ visibility }} {{ visibility_unit }}</p>
+       </div><!-- /.col-lg-4 -->
+     </div>
+     <div v-if="hasError">
+       Error in displaying weather data. Try again later.
+     </div>
    </div>
 </template>
 
