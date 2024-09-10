@@ -53,7 +53,7 @@ export default {
 <template>
   <div v-if="isLoading">Loading data, please wait...</div>
    <div v-else>
-     <h3><strong>Weather Today</strong></h3>
+     <h5>Weather Today</h5>
      <div class="pt-4 row">
        <div class="col-lg-4">
          <i class="bi bi-brightness-high-fill fs-2"></i>
