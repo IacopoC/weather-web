@@ -1,7 +1,9 @@
 <script>
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import GetLocation from "@/components/weather/GetLocation.vue";
 export default {
   name: "WeatherToday",
+  components: {GetLocation},
   data() {
     return {
       isLoading: true,
@@ -92,6 +94,7 @@ export default {
        Error in displaying weather data. Try again later.
      </div>
    </div>
+  <GetLocation></GetLocation>
 </template>
 
 <style scoped lang="scss">
