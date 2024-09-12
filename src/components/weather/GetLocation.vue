@@ -34,10 +34,10 @@ export default {
 
 <template>
   <div class="py-4">
-    <button type="button" class="btn btn-light" @click="getLocation">Get location coordinates</button>
+    <button type="button" class="btn btn-primary" @click="getLocation">Location Coordinates</button>
     <div v-if="latitude && longitude">
-      <p class="pt-4">Latitude: {{ latitude }}</p>
-      <p>Longitude: {{ longitude }}</p>
+      <p class="pt-4"><strong>Latitude:</strong> {{ latitude }}</p>
+      <p><strong>Longitude:</strong> {{ longitude }}</p>
     </div>
   </div>
 </template>
