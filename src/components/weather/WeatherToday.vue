@@ -94,6 +94,7 @@ export default {
        Error in displaying weather data. Try again later.
      </div>
    </div>
+  <hr>
   <GetLocation></GetLocation>
 </template>
 
