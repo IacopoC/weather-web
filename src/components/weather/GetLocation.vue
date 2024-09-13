@@ -7,8 +7,7 @@ export default {
       longitude: null
     }
   },
-  methods: {
-    getLocation() {
+  mounted() {
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
             (position) => {
@@ -28,14 +27,11 @@ export default {
         this.$emit('location-error', 'Geolocation is not supported.');
       }
     }
-  }
 }
 </script>
 
 <template>
   <div class="py-3">
-    <h5 class="pb-3">Location Coordinates</h5>
-    <button type="button" class="btn btn-light" @click="getLocation">Location Coordinates</button>
     <div v-if="latitude && longitude">
       <p class="pt-4"><strong>Latitude:</strong> {{ latitude }}</p>
       <p><strong>Longitude:</strong> {{ longitude }}</p>
