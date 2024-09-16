@@ -7,9 +7,8 @@ export default {
 <template>
   <ul class="nav nav-pills">
     <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Weather today</a></li>
-    <li class="nav-item"><a href="#" class="nav-link">Weather week</a></li>
-    <li class="nav-item"><a href="#" class="nav-link">Weather info</a></li>
-    <li class="nav-item"><a href="#" class="nav-link">Contact us</a></li>
+    <li class="nav-item"><a href="#" class="nav-link">Weather weekly</a></li>
+    <li class="nav-item"><a href="#" class="nav-link">Air Quality</a></li>
   </ul>
 </template>
 
