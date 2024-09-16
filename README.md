@@ -2,6 +2,11 @@
 
 A Weather web page to display forecast of the day of a location.
 
+# Features
+- Current weather forecast
+- Weekly weather forecast
+- Current Air Quality
+
 ## Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
