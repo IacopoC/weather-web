@@ -10,8 +10,7 @@ import WeatherToday from "@/components/weather/WeatherToday.vue";
   <div class="container">
     <Header title="Weather Web"></Header>
     <WeatherToday></WeatherToday>
-    <p>Note: Current conditions are based on 15-minutely weather data.</p>
-    <p><a href="https://open-meteo.com/">Free Weather API</a></p>
+    <p><strong>Note:</strong> Current conditions are based on 15-minutely weather data.</p>
   </div>
     <BannerQuote></BannerQuote>
   </main>

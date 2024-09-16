@@ -12,7 +12,7 @@ export default {
 <template>
   <footer class="footer mt-auto py-3 bg-body-tertiary">
     <div class="container">
-      <span class="text-body-secondary">© {{ Year }} - Weather Web</span>
+      <span class="text-body-secondary">© {{ Year }} - Weather Web from <a href="https://open-meteo.com/"><strong>Open Meteo Api</strong></a></span>
     </div>
   </footer>
 </template>
