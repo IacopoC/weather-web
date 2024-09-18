@@ -1,22 +1,37 @@
 <script>
-import { Bar } from 'vue-chartjs'
-import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
-ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
+import { Line } from 'vue-chartjs'
+import { Chart as ChartJS, Title, Tooltip, Legend, LineElement, CategoryScale, LinearScale } from 'chart.js'
+ChartJS.register(Title, Tooltip, Legend, LineElement, CategoryScale, LinearScale)
 export default {
-  name: "WeatherWeekly",
-  components: { Bar },
-  data() {
-    return {
-      chartData: {
-        labels: [ 'January', 'February', 'March'],
-        datasets: [
-          {
-            label: 'Data One',
-            backgroundColor: '#c3c3c3',
-            data: [40, 20, 12]
-          }
-        ]
-      }
+  name: 'WeatherWeekly',
+  components: { Line },
+  data: () => ({
+    loaded: false,
+    chartData: null
+  }),
+  async mounted () {
+    this.loaded = false
+
+    try {
+      const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m')
+      const weatherData = await response.json();
+
+      const labels = weatherData.hourly.time;
+      const temperatures = weatherData.hourly.temperature_2m;
+
+      this.chartData = {
+        labels,
+        datasets: [{
+          label: 'Temperature (°C)',
+          data: temperatures,
+          borderColor: 'rgb(19,106,232)',
+          fill: false
+        }]
+      };
+
+      this.loaded = true
+    } catch (error) {
+      console.error('Sorry, an error occurred:', error);
     }
   }
 }
@@ -24,7 +39,9 @@ export default {
 
 <template>
   <h5 class="pt-4">Weather Weekly</h5>
-  <Bar :data="chartData" />
+  <div class="container">
+    <Line v-if="loaded" :data="chartData"></Line>
+  </div>
 </template>
 
 <style scoped lang="scss">
