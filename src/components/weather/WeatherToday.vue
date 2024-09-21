@@ -72,7 +72,7 @@ export default {
 <template>
   <div v-if="isLoading">Loading data, please wait...</div>
    <div v-else>
-     <h5>Weather Today</h5>
+     <h5 id="weathertoday">Weather Today</h5>
      <div class="pt-4 row">
        <div class="col-lg-3">
          <i class="bi bi-brightness-high-fill fs-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Actual temperature"></i>
