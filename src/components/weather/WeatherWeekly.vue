@@ -10,20 +10,20 @@ default {
   components: { Line },
   data() {
     return {
-      loaded: false,
-      chartData: null
-    };
+    loaded: false,
+    chartData: null
+    }
   },
   async mounted() {
     this.loaded = false;
 
     try {
-      const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m');
+      const data = await fetch('https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m');
 
-      const weatherData = await response.json();
+      const weatherData = await data.json();
 
-      const labels = weatherData.hourly.time;
-      const temperatures = weatherData.hourly.temperature_2m;
+      let labels = weatherData.hourly['time'];
+      let temperatures = weatherData.hourly['temperature_2m'];
 
       this.chartData = {
         labels,
