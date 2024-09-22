@@ -10,12 +10,17 @@ export default {
 </script>
 
 <template>
-    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-        <span class="fs-4">{{ title }}</span>
-      </a>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">{{ title }}</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
       <Navigation></Navigation>
-    </header>
+      <div class="collapse navbar-collapse" id="navbarNav">
+      </div>
+    </div>
+  </nav>
 </template>
 
 <style scoped lang="scss">

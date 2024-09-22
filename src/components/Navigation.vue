@@ -5,10 +5,19 @@ export default {
 </script>
 
 <template>
-  <ul class="nav nav-pills">
-    <li class="nav-item"><a href="#weathertoday" class="nav-link active" aria-current="page">Weather today</a></li>
-    <li class="nav-item"><a href="#weatherweekly" class="nav-link">Weather weekly</a></li>
-    <li class="nav-item"><a href="#" class="nav-link">Air Quality</a></li>
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="#">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#weathertoday">Weather Today</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#weatherweekly">Weather weekly</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#airquality">Air Quality</a>
+    </li>
   </ul>
 </template>
 

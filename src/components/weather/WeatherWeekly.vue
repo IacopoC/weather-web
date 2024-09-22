@@ -44,7 +44,8 @@ default {
 </script>
 
 <template>
-  <h5 class="pt-4" id="weatherweekly">Weather Weekly</h5>
+  <div style="height:100px" id="weatherweekly"></div>
+  <h5 class="pt-4">Weather Weekly</h5>
   <div class="container">
     <Line v-if="loaded" :data="chartData"></Line>
   </div>
