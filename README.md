@@ -1,11 +1,11 @@
-# Weather web
+# Weather Web
 
-A Weather web page to display forecast of the day of a location.
+A Weather Web page to display forecast of the day for your location.
 
 # Features
-- Current weather forecast
-- Weekly weather forecast
-- Current Air Quality
+- Current weather forecast for your current location.
+- Weekly weather forecast for your current location.
+- Current Air Quality.
 
 ## Recommended IDE Setup
 
