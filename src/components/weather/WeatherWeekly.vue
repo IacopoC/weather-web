@@ -18,21 +18,40 @@ default {
     this.loaded = false;
 
     try {
-      const data = await fetch('https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m');
+      const data = await fetch('https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m');
 
       const weatherData = await data.json();
 
       let labels = weatherData.hourly['time'];
       let temperatures = weatherData.hourly['temperature_2m'];
+      let humidity = weatherData.hourly['relative_humidity_2m'];
+      let wind_speed = weatherData.hourly['wind_speed_10m'];
 
       this.chartData = {
         labels,
-        datasets: [{
-          label: 'Temperature (°C)',
-          data: temperatures,
-          borderColor: 'rgb(19,106,232)',
-          fill: false
-        }]
+        datasets: [
+          {
+            label: 'Temperature (°C)',
+            data: temperatures,
+            borderColor: 'rgb(19,106,232)',
+            fill: false,
+            tension: 0.1
+          },
+          {
+            label: 'Humidity (%)',
+            data: humidity,
+            borderColor: 'rgba(255,196,62,0.94)',
+            fill: false,
+            tension: 0.1
+          },
+          {
+            label: 'Wind Speed (m/s)',
+            data: wind_speed,
+            borderColor: 'rgba(255, 99, 132, 0.7)',
+            fill: false,
+            tension: 0.1
+          }
+        ]
       };
 
       this.loaded = true;
