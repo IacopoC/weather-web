@@ -76,46 +76,62 @@ export default {
      <h5>Weather Today</h5>
      <div class="pt-4 row">
        <div class="col-lg-3">
+         <div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded">
          <i class="bi bi-brightness-high-fill fs-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Actual temperature"></i>
          <p class="pt-4"><strong>Temperature:</strong></p>
          <h4>{{ temperature }} {{ temperature_unit }}</h4>
+           </div>
        </div><!-- /.col-lg-3 -->
        <div class="col-lg-3">
+         <div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded">
          <i class="bi bi-thermometer-half fs-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Actual temperature perception"></i>
          <p class="pt-4"><strong>Temperature perception:</strong></p>
          <h4>{{ ap_temperature }} {{ ap_temperature_unit }}</h4>
+           </div>
        </div><!-- /.col-lg-3 -->
        <div class="col-lg-3">
+         <div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded">
          <i class="bi bi-droplet-half fs-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Actual humidity"></i>
          <p class="pt-4"><strong>Humidity:</strong></p>
          <h4>{{ humidity }} {{ humidity_unit }}</h4>
+           </div>
        </div><!-- /.col-lg-3 -->
        <div class="col-lg-3">
+         <div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded">
          <i class="bi bi-snow fs-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Actual snowfall"></i>
          <p class="pt-4"><strong>Snowfall:</strong></p>
          <h4>{{ snow }} {{ snow_unit }}</h4>
+           </div>
        </div><!-- /.col-lg-3 -->
        </div>
      <div class="row pt-4">
        <div class="col-lg-3">
+         <div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded">
          <i class="bi bi-wind fs-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Actual wind speed"></i>
          <p class="pt-4"><strong>Wind speed:</strong></p>
          <h4>{{ wind }} {{ wind_unit }}</h4>
+         </div>
        </div><!-- /.col-lg-3 -->
        <div class="col-lg-3">
+         <div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded">
          <i class="bi bi-cloud-drizzle-fill fs-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Actual rain"></i>
          <p class="pt-4"><strong>Rain:</strong></p>
          <h4>{{ rain }} {{ rain_unit }}</h4>
+           </div>
        </div><!-- /.col-lg-3 -->
        <div class="col-lg-3">
+         <div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded">
          <i class="bi bi-bullseye fs-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Actual visibility"></i>
          <p class="pt-4"><strong>Visibility:</strong></p>
          <h4>{{ visibility }} {{ visibility_unit }}</h4>
+           </div>
        </div><!-- /.col-lg-3 -->
        <div class="col-lg-3">
+         <div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded">
          <i class="bi bi-cloud-fill fs-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Actual cloud coverage"></i>
          <p class="pt-4"><strong>Clouds:</strong></p>
          <h4>{{ cloud }} {{ cloud_unit }}</h4>
+           </div>
        </div><!-- /.col-lg-3 -->
      </div>
      <div v-if="hasError">
