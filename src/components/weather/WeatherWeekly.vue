@@ -33,21 +33,21 @@ default {
           {
             label: 'Temperature (°C)',
             data: temperatures,
-            borderColor: 'rgb(19,106,232)',
+            borderColor: 'rgba(255,196,62,0.94)',
             fill: false,
             tension: 0.1
           },
           {
             label: 'Humidity (%)',
             data: humidity,
-            borderColor: 'rgba(255,196,62,0.94)',
+            borderColor: 'rgb(19,106,232)',
             fill: false,
             tension: 0.1
           },
           {
             label: 'Wind Speed (m/s)',
             data: wind_speed,
-            borderColor: 'rgba(255, 99, 132, 0.7)',
+            borderColor: 'rgba(234,225,255,0.7)',
             fill: false,
             tension: 0.1
           }
