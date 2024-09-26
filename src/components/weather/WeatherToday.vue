@@ -72,7 +72,7 @@ export default {
 <template>
   <div v-if="isLoading">Loading data, please wait...</div>
    <div v-else>
-     <div style="height:100px" id="weathertoday"></div>
+     <div class="h-100p" id="weathertoday"></div>
      <h5>Weather Today</h5>
      <div class="pt-4 row">
        <div class="col-lg-3">

@@ -63,7 +63,7 @@ default {
 </script>
 
 <template>
-  <div style="height:100px" id="weatherweekly"></div>
+  <div class="h-100p" id="weatherweekly"></div>
   <h5 class="pt-4">Weather Weekly</h5>
   <div class="container">
     <Line v-if="loaded" :data="chartData"></Line>
