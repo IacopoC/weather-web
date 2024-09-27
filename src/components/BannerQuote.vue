@@ -8,7 +8,7 @@ export default {
   <div class="my-5">
     <div class="p-5 text-center bg-body-tertiary">
       <div class="container py-5">
-        <em class="col-lg-8 mx-auto lead">
+        <em class="col-lg-8 mx-auto lead text-dark-emphasis">
           “Conversation about the weather is the last refuge of the unimaginative.”
           <br><strong>Oscar Wilde</strong>
         </em>
