@@ -26,9 +26,13 @@ export default {
       rain_unit:'',
       visibility_unit:'',
       humidity_unit:'',
+      locationError: null
     }
   },
   methods: {
+    onLocationError(error) {
+      this.locationError = error;
+    },
     onLocationUpdated(location) {
       this.latitude = location.latitude;
       this.longitude = location.longitude;
@@ -138,7 +142,10 @@ export default {
        <p>Error in displaying weather data. Try again later.</p>
      </div>
    </div>
-  <GetLocation @location-updated="onLocationUpdated"></GetLocation>
+  <GetLocation @location-updated="onLocationUpdated" @location-error="onLocationError"></GetLocation>
+  <div v-if="locationError">
+    <p>Geolocation is not supported.</p>
+  </div>
 </template>
 
 <style scoped lang="scss">

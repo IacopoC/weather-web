@@ -4,7 +4,8 @@ export default {
   data() {
     return {
       latitude: null,
-      longitude: null
+      longitude: null,
+      error: null
     }
   },
   mounted() {
@@ -24,6 +25,7 @@ export default {
         );
       } else {
         console.error('Browser does not support coordinates location.');
+        this.error = 'Geolocation is not supported.';
         this.$emit('location-error', 'Geolocation is not supported.');
       }
     }
@@ -35,6 +37,9 @@ export default {
     <div v-if="latitude && longitude">
       <p class="pt-4"><strong>Latitude:</strong> {{ latitude }}</p>
       <p><strong>Longitude:</strong> {{ longitude }}</p>
+    </div>
+    <div v-else-if="error">
+      <p class="pt-4"><strong>Error:</strong> {{ error }}</p>
     </div>
   </div>
 </template>
