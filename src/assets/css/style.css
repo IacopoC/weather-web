@@ -1,4 +1,9 @@
 
+body {
+    font-family: "Sansita", sans-serif !important;
+    font-style: normal;
+}
+
 .h-100p {
     height:100px;
 }
