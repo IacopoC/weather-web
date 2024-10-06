@@ -15,9 +15,6 @@ export default {
     <li class="nav-item">
       <a class="nav-link" href="#weatherweekly">Weather Weekly</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#airquality">Air Quality</a>
-    </li>
   </ul>
 </template>
 
