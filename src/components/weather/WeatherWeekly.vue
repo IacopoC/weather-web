@@ -17,23 +17,20 @@ default {
       longitude: null
     }
   },
-  mounted() {
-
-    const { latitude, longitude } = this.$refs.getLocation.locationData;
-
-    if (latitude && longitude) {
-      this.fetchWeatherWeeklyData(latitude, longitude);
-    } else {
-      console.error("Failed to retrieve location data");
-    }
-  },
   methods: {
+    onLocationError(error) {
+      this.locationError = error;
+    },
+    onLocationUpdated(location) {
+      this.latitude = location.latitude;
+      this.longitude = location.longitude;
+      this.fetchWeatherWeeklyData(this.latitude, this.longitude);
+    },
     fetchWeatherWeeklyData(latitude, longitude) {
       this.loaded = false;
 
-    fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m&timezone=Europe%2FBerlin`);
-
-      then(response => response.json())
+    fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m&timezone=Europe%2FBerlin`)
+     .then(response => response.json())
           .then(weatherData => {
 
         let labels = weatherData.hourly['time'];
@@ -83,6 +80,7 @@ default {
   <div class="container">
     <Line v-if="loaded" :data="chartData"></Line>
   </div>
+  <GetLocation @location-updated="onLocationUpdated" @location-error="onLocationError"></GetLocation>
 </template>
 
 <style scoped lang="scss">
