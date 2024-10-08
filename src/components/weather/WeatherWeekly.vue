@@ -13,8 +13,8 @@ default {
     return {
     loaded: false,
     chartData: null,
-      latitude: null,
-      longitude: null
+    latitude: null,
+    longitude: null
     }
   },
   methods: {
