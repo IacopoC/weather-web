@@ -29,7 +29,7 @@ default {
     fetchWeatherWeeklyData(latitude, longitude) {
       this.loaded = false;
 
-    fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m&timezone=Europe%2FBerlin`)
+    fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m&temporal_resolution=hourly_6&timezone=Europe%2FBerlin`)
      .then(response => response.json())
           .then(weatherData => {
 
