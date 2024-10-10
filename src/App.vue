@@ -11,7 +11,6 @@ import WeatherWeekly from "@/components/weather/WeatherWeekly.vue";
     <Header title="Weather Web"></Header>
   <div class="container">
     <WeatherToday></WeatherToday>
-    <p><strong>Note:</strong> Current conditions are based on 15-minutely weather data.</p>
   </div>
     <div class="container">
       <WeatherWeekly></WeatherWeekly>

@@ -137,6 +137,7 @@ export default {
          <h4>{{ cloud }} {{ cloud_unit }}</h4>
            </div>
        </div><!-- /.col-lg-3 -->
+       <p><strong>Note:</strong> Current conditions are based on 15-minutely weather data.</p>
      </div>
      <div v-if="hasError">
        <p>Error in displaying weather data. Try again later.</p>
