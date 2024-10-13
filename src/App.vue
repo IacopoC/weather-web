@@ -4,6 +4,7 @@ import Footer from './components/Footer.vue';
 import BannerQuote from "@/components/BannerQuote.vue";
 import WeatherToday from "@/components/weather/WeatherToday.vue";
 import WeatherWeekly from "@/components/weather/WeatherWeekly.vue";
+import Movies from './components/Movies.vue';
 </script>
 
 <template>
@@ -14,6 +15,7 @@ import WeatherWeekly from "@/components/weather/WeatherWeekly.vue";
   </div>
     <div class="container">
       <WeatherWeekly></WeatherWeekly>
+      <Movies></Movies>
     </div>
     <BannerQuote></BannerQuote>
   </main>
