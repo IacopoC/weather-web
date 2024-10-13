@@ -76,7 +76,7 @@ default {
 
 <template>
   <div class="h-100p" id="weatherweekly"></div>
-  <h5 class="pt-4">Weather Weekly</h5>
+  <h5 class="px-2 pt-4">Weather Weekly</h5>
   <div class="container">
     <Line v-if="loaded" :data="chartData"></Line>
   </div>

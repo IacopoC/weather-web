@@ -6,7 +6,7 @@ export default {
 
 <template>
   <div class="h-100p" id="movies"></div>
-  <h5 class="py-4">Movies Weather</h5>
+  <h5 class="px-2 py-4">Movies Weather</h5>
   <div class="container">
     <div class="row">
       <div class="col-md-3">

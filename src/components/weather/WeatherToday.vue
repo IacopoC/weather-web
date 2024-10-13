@@ -77,7 +77,7 @@ export default {
   <div v-if="isLoading">Loading data, please wait...</div>
    <div v-else>
      <div class="h-100p" id="weathertoday"></div>
-     <h5>Weather Today</h5>
+     <h5 class="px-2">Weather Today</h5>
      <div class="pt-4 row">
        <div class="col-lg-3">
          <div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded" :class="{ 'bg-warning-subtle': temperature > 17 }">
