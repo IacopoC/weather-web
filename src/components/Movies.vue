@@ -35,11 +35,12 @@ export default {
       ]
     }
   },
-  methods:
-     function getImageUrl(name) {
-          return new URL(`./assets/img/${name}.jpg`, import.meta.url).href
-     }
-}
+  methods: {
+     getImageUrl(name) {
+       return new URL(`../assets/img/${name}.jpg`, import.meta.url).href
+      }
+    }
+ }
 </script>
 
 <template>
