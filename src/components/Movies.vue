@@ -10,6 +10,7 @@ export default {
           location: 'USA',
           image: 'twister',
           description: 'In Twister, Bill and Jo Harding, advanced storm chasers on the brink of divorce, must join together to create an advanced...',
+          imdb_link:'tt0117998',
         },
         {
           title: 'Geostorm',
@@ -17,6 +18,7 @@ export default {
           location: 'USA',
           image: 'geostorm',
           description: 'Geostorm is a sci-fi thriller starring Gerard Butler as satellite designer Jake Lawson who discovers a problem with an...',
+          imdb_link:'tt1981128',
         },
         {
           title: 'The Day After Tomorrow',
@@ -24,6 +26,7 @@ export default {
           location: 'USA, UK',
           image: 'day-after-tomorrow',
           description: 'The Day After Tomorrow depicts the cataclysmic effects of global climate change as a series of extreme weather events unfold...',
+          imdb_link:'tt0319262',
         },
         {
           title: 'Greenland',
@@ -31,6 +34,7 @@ export default {
           location: 'USA',
           image: 'greenland',
           description: 'Greenland is a 2020 thriller directed by Ric Roman Waugh and written by Chris Sparling. Starring Gerard Butler, Scott Glenn...',
+          imdb_link:'tt7737786',
         },
       ]
     }
@@ -54,7 +58,7 @@ export default {
           <div class="card-body">
             <h5 class="card-title">{{ movie.title }}</h5>
             <p class="card-text">{{ movie.location }} - {{ movie.year }} | {{ movie.description }}</p>
-            <a href="#" class="btn btn-primary">Discover more</a>
+            <a :href="'https://www.imdb.com/title/' + movie.imdb_link + '/'" class="btn btn-primary">About the Movie <i class="bi bi-box-arrow-up-right p-2"></i></a>
           </div>
         </div>
       </div>
