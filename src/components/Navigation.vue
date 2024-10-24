@@ -15,6 +15,9 @@ export default {
     <li class="nav-item">
       <a class="nav-link" href="#weatherweekly">Weather Weekly</a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#movies">Weather Movies</a>
+    </li>
   </ul>
 </template>
 
