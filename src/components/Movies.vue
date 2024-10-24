@@ -49,7 +49,8 @@ export default {
 
 <template>
   <div class="h-100p" id="movies"></div>
-  <h5 class="px-2 py-4">Weather Movies</h5>
+  <h5 class="px-2 pt-4">Weather Movies</h5>
+  <p class="px-2 pb-4">A selection of movies about weather of different genres.</p>
   <div class="container">
     <div class="row">
       <div class="col-md-3" v-for="movie in movies" :key="movie.title">
