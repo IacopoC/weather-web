@@ -56,7 +56,7 @@ export default {
 </script>
 
 <template>
-  <div class="h-100p" id="movies"></div>
+  <div class="h-100p" id="weathermovies"></div>
   <h5 class="px-2 pt-4">Weather Movies</h5>
   <p class="px-2 pb-4">A selection of movies about weather of different genres.</p>
   <div class="container">
