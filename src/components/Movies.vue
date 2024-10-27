@@ -5,6 +5,7 @@ export default {
     return {
       movies: [
         {
+          id: 1,
           title: 'Twister',
           year: 1996,
           location: 'USA',
@@ -13,6 +14,7 @@ export default {
           imdb_link:'tt0117998',
         },
         {
+          id: 2,
           title: 'Geostorm',
           year: 2017,
           location: 'USA',
@@ -21,6 +23,7 @@ export default {
           imdb_link:'tt1981128',
         },
         {
+          id: 3,
           title: 'The Day After Tomorrow',
           year: 2004,
           location: 'USA, UK',
@@ -29,6 +32,7 @@ export default {
           imdb_link:'tt0319262',
         },
         {
+          id: 4,
           title: 'Greenland',
           year: 2020,
           location: 'USA',
@@ -37,6 +41,7 @@ export default {
           imdb_link:'tt7737786',
         },
         {
+          id: 5,
           title: 'Into the Storm',
           year: 2014,
           location: 'USA',
@@ -44,14 +49,26 @@ export default {
           duration:'1h 29min',
           imdb_link:'tt2106361',
         },
-      ]
+      ],
+      highlightedFilmId: null,
     }
   },
   methods: {
      getImageUrl(name) {
        return new URL(`../assets/img/${name}.jpg`, import.meta.url).href
       }
+    },
+  computed: {
+    today() {
+      return new Date().getDate();
+    },
+    highlightedMovieIndex() {
+      return (this.today - 1) % this.movies.length;
+    },
+    highlightedMovieId() {
+      return this.movies[this.highlightedMovieIndex]?.id;
     }
+  }
  }
 </script>
 
@@ -61,7 +78,7 @@ export default {
   <p class="px-2 pb-4">A selection of movies about weather of different genres.</p>
   <div class="container">
     <div class="row">
-      <div class="col-lg" v-for="movie in movies" :key="movie.title">
+      <div class="col-lg p-2" v-for="movie in movies" :key="movie.title" :class="{ 'bg-primary': movie.id === highlightedMovieId }">
         <div class="card">
           <img :src="getImageUrl(movie.image)" class="card-img-top" :alt="movie.title">
           <div class="card-body">
