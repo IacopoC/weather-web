@@ -1,21 +1,20 @@
-# Weather Web
+### Weather Web
 
 A Weather Web page to display forecast of the day for your location.
 
-# Features
+### Features
 - Current weather forecast for your current location.
 - Weekly weather forecast for your current location.
-- Weather movies, a selection of disaster movies.
+- Weather movies, a selection of movies about weather.
 
-## Recommended IDE Setup
+### Dependencies
+- [Vue Chart js](https://vue-chartjs.org/)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Customize configuration
+### Customize configuration
 
 See [Vite Configuration Reference](https://vitejs.dev/config/).
 
-## Project Setup
+### Project Setup
 
 ```sh
 npm install
