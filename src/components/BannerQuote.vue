@@ -4,7 +4,7 @@ export default {
   data() {
     return {
       texts: [
-        { quote: "“All weather is sin-related. Lust causes thunder, anger causes fog, and you don’t want to know what causes dew.”", author: "Stephen Colbert" },
+        { quote: "“Weather forecast for tonight: dark.”", author: "George Carlin" },
         { quote: "“Going to the woods is going home, for I suppose we came from the woods originally. But in some of nature’s forests, the adventurous traveler seems a feeble, unwelcome creature; wild beasts and the weather trying to kill him, the rank, tangled vegetation, armed with spears and stinging needles, barring his way and making life a hard struggle.”", author: "John Muir" },
         { quote: "“If enough people think of a thing and work hard enough at it, I guess it’s pretty nearly bound to happen, wind and weather permitting.”", author: "Laura Ingalls Wilder" },
         { quote: "“I don’t have to get up in the morning and go beat up my body like I used to. I don’t have to be out there in August in 108 degree weather down in Texas.”", author: "Emmitt Smith" },
