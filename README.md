@@ -12,6 +12,9 @@ A Weather Web page to display forecast of the day for your location.
 - [Bootstrap Icons](https://icons.getbootstrap.com/)
 - [Vue Chart js](https://vue-chartjs.org/)
 
+### API
+- [Open Meteo](https://open-meteo.com/)
+
 ### Customize configuration
 
 See [Vite Configuration Reference](https://vitejs.dev/config/).
