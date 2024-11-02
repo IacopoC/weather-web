@@ -8,6 +8,7 @@ Weather Web is a single page to display forecast of the day for your location.
 - Weather movies, a selection of movies about weather.
 
 ### Dependencies
+- [Vue](https://vuejs.org/)
 - [Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
 - [Bootstrap Icons](https://icons.getbootstrap.com/)
 - [Vue Chart js](https://vue-chartjs.org/)
