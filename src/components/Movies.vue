@@ -88,7 +88,7 @@ export default {
             <p v-if="movie.id === highlightedMovieId">Suggestion of the day</p>
             <p v-else>Other suggestion</p>
               </div>
-            <a :href="'https://www.imdb.com/title/' + movie.imdb_link + '/'" class="btn btn-primary">About the Movie <i class="bi bi-box-arrow-up-right p-2"></i></a>
+            <a :href="'https://www.imdb.com/title/' + movie.imdb_link + '/'" target="_blank" class="btn btn-primary">About the Movie <i class="bi bi-box-arrow-up-right p-2"></i></a>
           </div>
         </div>
       </div>
