@@ -18,6 +18,9 @@ export default {
     <li class="nav-item">
       <a class="nav-link" href="#weathermovies">Weather Movies</a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#weatherquotes">Weather Quotes</a>
+    </li>
   </ul>
 </template>
 
