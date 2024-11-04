@@ -42,6 +42,51 @@ export default {
         },
         {
           id: 5,
+          title: 'Crawl',
+          year: 2019,
+          location: 'USA',
+          image: 'crawl',
+          duration:'1h 27min',
+          imdb_link:'tt8364368',
+        },
+        {
+          id: 6,
+          title: 'The Perfect Storm',
+          year: 2000,
+          location: 'USA',
+          image: 'perfect-storm',
+          duration:'2h 10min',
+          imdb_link:'tt0177971',
+        },
+        {
+          id: 7,
+          title: 'The Poseidon Adventure',
+          year: 1972,
+          location: 'USA',
+          image: 'poseidon-adventure',
+          duration:'1h 57min',
+          imdb_link:'tt0069113',
+        },
+        {
+          id: 8,
+          title: 'The Wave',
+          year: 2015,
+          location: 'Sweden, Norway',
+          image: 'the-wave',
+          duration:'1h 45min',
+          imdb_link:'tt3616916',
+        },
+        {
+          id: 9,
+          title: 'Sharknado',
+          year: 2016,
+          location: 'USA',
+          image: 'sharknado',
+          duration:'1h 26min',
+          imdb_link:'tt2724064',
+        },
+        {
+          id: 10,
           title: 'Into the Storm',
           year: 2014,
           location: 'USA',
@@ -78,7 +123,7 @@ export default {
   <p class="px-2 pb-4">A selection of movies about weather of different genres.</p>
   <div class="container">
     <div class="row">
-      <div class="col-lg p-2" v-for="movie in movies" :key="movie.title" :class="{ 'bg-primary': movie.id === highlightedMovieId }">
+      <div class="col-lg-3 p-2" v-for="movie in movies" :key="movie.title" :class="{ 'bg-primary': movie.id === highlightedMovieId }">
         <div class="card">
           <img :src="getImageUrl(movie.image)" class="card-img-top" :alt="movie.title">
           <div class="card-body">
