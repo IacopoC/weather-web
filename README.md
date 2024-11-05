@@ -6,6 +6,8 @@ Weather Web is a single page to display forecast of the day for your location.
 - Current weather forecast for your current location.
 - Weekly weather forecast for your current location.
 - Weather movies, a selection of movies about weather.
+- Weather quotes, a new quote about weather every day.
+
 
 ### Dependencies
 - [Vue](https://vuejs.org/)
