@@ -1,5 +1,6 @@
 <script setup>
 import Header from './components/Header.vue';
+import BannerHero from './components/BannerHero.vue';
 import Footer from './components/Footer.vue';
 import BannerQuote from "@/components/BannerQuote.vue";
 import WeatherToday from "@/components/weather/WeatherToday.vue";
@@ -11,6 +12,7 @@ import Movies from './components/Movies.vue';
   <main class="flex-shrink-0">
     <Header title="Weather Web"></Header>
   <div class="container">
+    <BannerHero></BannerHero>
     <WeatherToday></WeatherToday>
   </div>
     <div class="container">
