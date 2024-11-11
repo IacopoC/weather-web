@@ -13,11 +13,6 @@ export default {
     onLocationError(error) {
       this.locationError = error;
     },
-    onLocationUpdated(location) {
-      this.latitude = location.latitude;
-      this.longitude = location.longitude;
-      this.fetchWeatherData(this.latitude, this.longitude);
-    },
   }
 }
 </script>
@@ -28,7 +23,7 @@ export default {
     <div class="col-lg-6 mx-auto">
       <p class="lead pt-3">Weather for your location and other info about weather forecast.</p>
       <p class="lead mb-4">Discover a list of quotes and movies about weather!</p>
-      <GetLocation @location-updated="onLocationUpdated" @location-error="onLocationError"></GetLocation>
+      <GetLocation @location-error="onLocationError"></GetLocation>
     </div>
   </div>
 </template>
