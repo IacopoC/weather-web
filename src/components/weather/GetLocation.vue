@@ -35,10 +35,10 @@ export default {
 <template>
   <div class="py-3">
     <div v-if="latitude && longitude">
-      <p class="pt-4"><strong>Latitude:</strong> {{ latitude }} <strong>Longitude:</strong> {{ longitude }}</p>
+      <p><strong>Latitude:</strong> {{ latitude }} <strong>Longitude:</strong> {{ longitude }}</p>
     </div>
     <div v-else-if="error">
-      <p class="pt-4"><strong>Error:</strong> {{ error }}</p>
+      <p><strong>Error:</strong> {{ error }}</p>
     </div>
   </div>
 </template>
