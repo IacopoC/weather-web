@@ -23,6 +23,7 @@ export default {
     <div class="col-lg-6 mx-auto">
       <p class="lead pt-3">Weather for your location and other info about weather forecast.</p>
       <p class="lead mb-4">Discover a list of quotes and movies about weather!</p>
+      <i class="bi bi-three-dots"></i>
       <GetLocation @location-error="onLocationError"></GetLocation>
     </div>
   </div>
