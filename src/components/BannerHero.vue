@@ -7,6 +7,7 @@ export default {
     return {
       latitude: null,
       longitude: null,
+      locationError: null
     }
   },
   methods: {
@@ -25,6 +26,9 @@ export default {
       <p class="lead mb-4">Discover a list of <a class="text-white" href="#weatherquotes">quotes</a> and <a class="text-white" href="#weathermovies">movies</a> about weather!</p>
       <i class="bi bi-three-dots"></i>
       <GetLocation @location-error="onLocationError"></GetLocation>
+      <div v-if="locationError">
+        <p>Geolocation is not supported.</p>
+      </div>
     </div>
   </div>
 </template>
