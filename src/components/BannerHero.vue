@@ -27,7 +27,7 @@ export default {
       <i class="bi bi-three-dots"></i>
       <GetLocation @location-error="onLocationError"></GetLocation>
       <div v-if="locationError">
-        <p>Geolocation is not supported.</p>
+        <p>{{ locationError }}</p>
       </div>
     </div>
   </div>
