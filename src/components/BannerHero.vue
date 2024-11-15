@@ -35,7 +35,7 @@ export default {
 
 <style scoped lang="scss">
  .head-text {
-   font-size: 3em;
+   font-size: 4em;
    background: -webkit-linear-gradient(rgb(0,0,255), 	rgb(30,144,255));
    background-clip: text;
    -webkit-background-clip: text;
