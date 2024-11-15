@@ -1,4 +1,4 @@
-### Weather Web - Forecast for a location
+### Weather Web - Forecast for your location
 
 Weather Web is a single page to display forecast of the day for your location.
 
