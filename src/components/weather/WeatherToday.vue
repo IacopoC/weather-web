@@ -83,7 +83,10 @@ export default {
   </div>
    <div v-else>
      <div class="h-100p" id="weathertoday"></div>
-     <h5 class="px-2">Weather Today</h5>
+     <div class="px-2 pt-4">
+       <h5>Weather Today</h5>
+       <p>Weather data for today.</p>
+     </div>
      <div class="pt-4 row">
        <div class="col-lg-3">
          <div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded" :class="{ 'bg-warning-subtle': temperature > 17 }">

@@ -10,16 +10,16 @@ export default {
       <a class="nav-link" href="#">Home</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#weathertoday">Weather Today</a>
+      <a class="nav-link" href="/#:~:text=temperature">Weather Today</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#weatherweekly">Weather Weekly</a>
+      <a class="nav-link" href="/#:~:text=days">Weather Weekly</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#weathermovies">Weather Movies</a>
+      <a class="nav-link" href="/#:~:text=genres">Weather Movies</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#weatherquotes">Weather Quotes</a>
+      <a class="nav-link" href="/#:~:text=quote">Weather Quotes</a>
     </li>
   </ul>
 </template>
