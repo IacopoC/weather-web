@@ -1,6 +1,7 @@
 ### Weather Web - Forecast for your location
 
-Weather Web is a single page to display forecast of the day for your location.
+Weather Web is a single page built using Vue hs. The page displays forecast of the day for your location, the current weather and a chart that shows data of the weather for the next 7 days. A component shows a selection of movies about weather and a quote about climate.
+
 
 ### Features
 - Today weather forecast for your current location.
