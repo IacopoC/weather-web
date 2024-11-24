@@ -19,14 +19,17 @@ export default {
                   { latitude: position.coords.latitude, longitude: position.coords.longitude });
             },
             (error) => {
-              console.error('Error location coordinates:', error);
-              this.$emit('location-error', error);
+              if (error.code === error.PERMISSION_DENIED) {
+                this.error = 'Geolocation access denied.';
+              } else {
+                this.error = 'Error retrieving location: ' + error.message;
+              }
+              this.$emit('location-error', this.error);
             }
         );
       } else {
-        console.error('Browser does not support coordinates location.');
-        this.error = 'Geolocation is not supported.';
-        this.$emit('location-error', 'Geolocation is not supported.');
+        this.error = 'Geolocation is not supported by your browser.';
+        this.$emit('location-error', this.error);
       }
     }
 }
