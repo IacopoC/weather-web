@@ -41,7 +41,7 @@ export default {
       <p>Latitude: {{ latitude.toFixed(6) }} ° Longitude: {{ longitude.toFixed(6) }} °</p>
     </div>
     <div v-else-if="error">
-      <p>Error: {{ error }}</p>
+      <p class="text-warning"><strong>Error: {{ error }}</strong></p>
     </div>
   </div>
 </template>
