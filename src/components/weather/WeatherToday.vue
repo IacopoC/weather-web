@@ -25,8 +25,7 @@ export default {
       ap_temperature_unit: '',
       rain_unit:'',
       visibility_unit:'',
-      humidity_unit:'',
-      locationError: null
+      humidity_unit:''
     }
   },
   methods: {
@@ -153,9 +152,6 @@ export default {
      </div>
    </div>
   <GetLocation @location-updated="onLocationUpdated" @location-error="onLocationError"></GetLocation>
-  <div v-if="locationError">
-    <p>Geolocation is not supported.</p>
-  </div>
 </template>
 
 <style scoped lang="scss">
