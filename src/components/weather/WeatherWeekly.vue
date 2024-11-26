@@ -13,6 +13,7 @@ default {
     return {
     loaded: false,
     chartData: null,
+    isLoading: true,
     latitude: null,
     longitude: null
     }
@@ -27,6 +28,7 @@ default {
       this.fetchWeatherWeeklyData(this.latitude, this.longitude);
     },
     fetchWeatherWeeklyData(latitude, longitude) {
+      this.isLoading = true;
       this.loaded = false;
 
     fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m&temporal_resolution=hourly_6&timezone=Europe%2FBerlin`)
@@ -64,17 +66,26 @@ default {
             }
           ]
         };
-
         this.loaded = true;
       }).catch(error => {
         console.error('Sorry, an error occurred:', error);
-      });
+      })
+        .finally(() => {
+          this.isLoading = false;
+        });
     }
   }
 };
 </script>
 
 <template>
+  <div v-if="isLoading">
+    <h5 class="px-2">Weather Weekly</h5>
+    <div class="mt-4 p-3 bg-secondary-subtle border border-secondary-subtle rounded-3">
+      Loading data, please wait...
+    </div>
+  </div>
+  <div v-else>
   <div class="h-100p" id="weatherweekly"></div>
   <div class="px-2 pt-4">
   <h5>Weather Weekly</h5>
@@ -83,7 +94,11 @@ default {
   <div class="container">
     <Line v-if="loaded" :data="chartData"></Line>
   </div>
+  </div>
+  <div class="pt-5">
+  <p><strong>Note:</strong> Current timezone is GMT+2 (Europe/Berlin).</p>
   <GetLocation @location-updated="onLocationUpdated" @location-error="onLocationError"></GetLocation>
+  </div>
 </template>
 
 <style scoped lang="scss">
