@@ -26,9 +26,6 @@ export default {
       <p class="lead mb-4">Discover a list of <a class="text-white" href="/#:~:text=quote">quotes</a> and <a class="text-white" href="/#:~:text=genres">movies</a> about weather!</p>
       <i class="bi bi-three-dots"></i>
       <GetLocation @location-error="onLocationError"></GetLocation>
-      <div v-if="locationError">
-        <p>{{ locationError }}</p>
-      </div>
     </div>
   </div>
 </template>
