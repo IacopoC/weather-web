@@ -76,8 +76,8 @@ export default {
   <div v-if="isLoading">
     <div class="h-100p" id="weathertoday"></div>
     <h5 class="px-2">Weather Today</h5>
-    <div class="mt-4 p-3 bg-secondary-subtle border border-secondary-subtle rounded-3">
-      Loading data, please wait...
+    <div class="placeholder-glow">
+      <span class="placeholder col-12"></span>
     </div>
   </div>
    <div v-else>
