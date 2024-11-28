@@ -94,11 +94,10 @@ default {
   <div class="container">
     <Line v-if="loaded" :data="chartData"></Line>
   </div>
+    <div class="pt-5">
+      <p><strong>Note:</strong> Current timezone is GMT+2 (Europe/Berlin).</p></div>
   </div>
-  <div class="pt-5">
-  <p><strong>Note:</strong> Current timezone is GMT+2 (Europe/Berlin).</p>
   <GetLocation @location-updated="onLocationUpdated" @location-error="onLocationError"></GetLocation>
-  </div>
 </template>
 
 <style scoped lang="scss">
