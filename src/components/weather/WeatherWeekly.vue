@@ -68,7 +68,7 @@ default {
         };
         this.loaded = true;
       }).catch(error => {
-        console.error('Sorry, an error occurred:', error);
+        console.error('Sorry, something is wrong, an error has occurred:', error);
       })
         .finally(() => {
           this.isLoading = false;

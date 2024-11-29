@@ -61,7 +61,7 @@ export default {
             this.cloud_unit = data.current_units['cloud_cover'];
           })
           .catch(error => {
-            console.error('Sorry, an error occurred:', error);
+            console.error('Sorry, something is wrong, an error has occurred:', error);
             this.hasError = true;
           })
           .finally(() => {
