@@ -3,7 +3,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import GetLocation from "@/components/weather/GetLocation.vue";
 export default {
   name: "WeatherToday",
-  components: {GetLocation},
+  components: { GetLocation },
   data() {
     return {
       latitude: null,
