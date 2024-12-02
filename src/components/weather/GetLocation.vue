@@ -42,11 +42,11 @@ export default {
 <template>
   <div class="py-3">
     <div v-if="latitude && longitude">
-      <p>Latitude: {{ latitude.toFixed(6) }} ° Longitude: {{ longitude.toFixed(6) }} °</p>
+      <h5><i class="bi bi-compass"></i> Latitude: {{ latitude.toFixed(6) }} ° Longitude: {{ longitude.toFixed(6) }} °</h5>
     </div>
     <div v-else-if="error">
       <p class="text-warning">Warning: {{ error }}</p>
-      <p class="text-warning">Latitude: {{ defaultLatitude }}, Longitude {{ defaultLongitude }}</p>
+      <h5 class="text-warning"><i class="bi bi-compass"></i> Latitude: {{ defaultLatitude }} ° Longitude {{ defaultLongitude }} °</h5>
     </div>
   </div>
 </template>
