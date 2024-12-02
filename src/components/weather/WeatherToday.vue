@@ -8,6 +8,8 @@ export default {
     return {
       latitude: null,
       longitude: null,
+      defaultLatitude: 41.535712,
+      defaultLongitude: 12.324200,
       isLoading: true,
       hasError: false,
       temperature: '',
@@ -31,6 +33,7 @@ export default {
   methods: {
     onLocationError(error) {
       this.locationError = error;
+      this.fetchWeatherData(this.defaultLatitude, this.defaultLongitude);
     },
     onLocationUpdated(location) {
       this.latitude = location.latitude;

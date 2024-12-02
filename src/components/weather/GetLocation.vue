@@ -5,7 +5,9 @@ export default {
     return {
       latitude: null,
       longitude: null,
-      error: null
+      error: null,
+      defaultLatitude: 41.535712,
+      defaultLongitude: 12.324200,
     }
   },
   mounted() {
@@ -20,7 +22,7 @@ export default {
             },
             (error) => {
               if (error.code === error.PERMISSION_DENIED) {
-                this.error = 'Geolocation access denied.';
+                this.error = 'Geolocation access denied. Using default location coordinates (Rome, IT)';
               } else {
                 this.error = 'Error retrieving location: ' + error.message;
               }
@@ -29,6 +31,8 @@ export default {
         );
       } else {
         this.error = 'Geolocation is not supported by your browser.';
+        this.latitude = this.defaultLatitude;
+        this.longitude = this.defaultLongitude;
         this.$emit('location-error', this.error);
       }
     }
@@ -41,7 +45,8 @@ export default {
       <p>Latitude: {{ latitude.toFixed(6) }} ° Longitude: {{ longitude.toFixed(6) }} °</p>
     </div>
     <div v-else-if="error">
-      <p class="text-warning"><strong>Error: {{ error }}</strong></p>
+      <p class="text-warning">Warning: {{ error }}</p>
+      <p class="text-warning">Latitude: {{ defaultLatitude }}, Longitude {{ defaultLongitude }}</p>
     </div>
   </div>
 </template>
