@@ -6,8 +6,8 @@ Weather Web is a single page built using Vue. The page displays forecast of the 
 ### Features
 - Today weather forecast for your current location.
 - Weekly weather forecast for your current location.
-- Weather movies, a selection of movies about weather (10 movies).
-- Weather quotes, a new quote about weather every day (10 quotes).
+- Weather movies, a selection of disaster movies about weather events (10 movies).
+- Weather quotes, a quote about weather will be shown every day (10 quotes).
 
 
 ### Dependencies
