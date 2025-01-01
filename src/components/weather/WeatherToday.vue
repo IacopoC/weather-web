@@ -78,7 +78,7 @@ export default {
 <template>
   <div v-if="isLoading">
     <div class="h-100p" id="weathertoday"></div>
-    <h5 class="px-2">Weather Today</h5>
+    <h4 class="px-2">Weather Today</h4>
     <div class="placeholder-glow">
       <span class="placeholder col-12"></span>
     </div>
@@ -86,7 +86,7 @@ export default {
    <div v-else>
      <div class="h-100p" id="weathertoday"></div>
      <div class="px-2 pt-4">
-       <h5>Weather Today</h5>
+       <h4>Weather Today</h4>
        <p>Weather data for today.</p>
      </div>
      <div class="pt-4 row">

@@ -120,7 +120,7 @@ export default {
 <template>
   <div class="h-100p" id="weathermovies"></div>
   <div class="px-2 pt-4">
-  <h5>Weather Movies</h5>
+  <h4>Weather Movies</h4>
   <p>A selection of movies about weather of different genres.</p>
   <p>A new suggestion every day!</p>
   </div>

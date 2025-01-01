@@ -83,7 +83,7 @@ default {
 
 <template>
   <div v-if="isLoading">
-    <h5 class="px-2">Weather Weekly</h5>
+    <h4 class="px-2">Weather Weekly</h4>
     <div class="placeholder-glow">
       <span class="placeholder col-12"></span>
     </div>
@@ -91,7 +91,7 @@ default {
   <div v-else>
   <div class="h-100p" id="weatherweekly"></div>
   <div class="px-2 pt-4">
-  <h5>Weather Weekly</h5>
+  <h4>Weather Weekly</h4>
   <p>Weather data for 7 days.</p>
   </div>
   <div class="container">
