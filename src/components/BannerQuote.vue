@@ -26,13 +26,17 @@ export default {
 <template>
   <div class="my-5">
     <div class="h-100p" id="weatherquotes"></div>
-    <div class="p-5 text-center bg-body-tertiary">
-      <div class="container py-5">
-        <h2 class="lead pb-2"><strong>Weather Quote of the day:</strong></h2>
-        <em class="col-lg-8 mx-auto lead text-dark-emphasis">
-          {{ dailyQuote.quote }}<br>
-          <strong>{{ dailyQuote.author }}</strong>
-        </em>
+    <div class="p-5 bg-body-tertiary">
+      <div class="container py-2">
+        <h4>Quote of the day</h4>
+        <figure>
+          <blockquote class="blockquote">
+            <p>{{ dailyQuote.quote }}</p>
+          </blockquote>
+          <figcaption class="blockquote-footer">
+            Author: <cite title="Source Title">{{ dailyQuote.author }}</cite>
+          </figcaption>
+        </figure>
       </div>
     </div>
   </div>
