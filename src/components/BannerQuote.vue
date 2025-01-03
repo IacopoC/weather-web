@@ -18,6 +18,13 @@ export default {
     dailyQuote() {
       const today = new Date().getDay();
       return this.texts[today];
+    },
+    quoteClass() {
+      const colors = ["text-primary-emphasis", "text-secondary-emphasis", "text-warning-emphasis", "text-light-emphasis", "text-success-emphasis", "text-info-emphasis"];
+      const index = this.texts.findIndex(
+          (text) => text === this.dailyQuote
+      );
+      return colors[index % colors.length];
     }
   }
 }
@@ -29,9 +36,10 @@ export default {
     <div class="p-5 bg-body-tertiary">
       <div class="container py-2">
         <h4>Quote of the day</h4>
+        <p>A new quote about weather every day.</p>
         <figure>
           <blockquote class="blockquote">
-            <p>{{ dailyQuote.quote }}</p>
+            <p :class="quoteClass">{{ dailyQuote.quote }}</p>
           </blockquote>
           <figcaption class="blockquote-footer">
             Author: <cite title="Source Title">{{ dailyQuote.author }}</cite>
