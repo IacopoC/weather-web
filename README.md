@@ -16,6 +16,7 @@ This is a demo project built using Vue.js and is not a production ready website.
 - [Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
 - [Bootstrap Icons](https://icons.getbootstrap.com/)
 - [Vue Chart js](https://vue-chartjs.org/)
+- [Google Fonts Lato](https://fonts.google.com/specimen/Lato)
 
 ### API
 - [Open Meteo](https://open-meteo.com/)
