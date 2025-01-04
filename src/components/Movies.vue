@@ -122,7 +122,6 @@ export default {
   <div class="px-2 pt-4">
   <h4>Weather Movies</h4>
   <p>A selection of movies about weather of different genres.</p>
-  <p>A new suggestion every day!</p>
   </div>
   <div class="container">
     <div class="row">
