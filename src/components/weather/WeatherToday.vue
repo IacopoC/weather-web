@@ -1,9 +1,10 @@
 <script>
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import GetLocation from "@/components/weather/GetLocation.vue";
+import WeatherCard from "@/components/weather/WeatherCard.vue";
 export default {
   name: "WeatherToday",
-  components: { GetLocation },
+  components: { GetLocation, WeatherCard },
   data() {
     return {
       latitude: null,
@@ -27,7 +28,17 @@ export default {
       ap_temperature_unit: '',
       rain_unit:'',
       visibility_unit:'',
-      humidity_unit:''
+      humidity_unit:'',
+      weatherData: [
+        { icon: 'bi bi-brightness-high-fill', label: 'Temperature', value: this.temperature, unit: this.temperature_unit, threshold: 17, thresholdClass: 'bg-warning-subtle', tooltip: 'Actual temperature' },
+        { icon: 'bi bi-thermometer-half', label: 'Temperature perception', value: this.ap_temperature, unit: this.ap_temperature_unit, threshold: 17, thresholdClass: 'bg-warning-subtle', tooltip: 'Actual temperature perception' },
+        { icon: 'bi bi-droplet-half', label: 'Humidity', value: this.humidity, unit: this.humidity_unit, threshold: 70, thresholdClass: 'bg-primary-subtle', tooltip: 'Actual humidity' },
+        { icon: 'bi bi-snow', label: 'Snowfall', value: this.snow, unit: this.snow_unit, threshold: 100, thresholdClass: 'bg-light-subtle', tooltip: 'Actual snowfall' },
+        { icon: 'bi bi-wind', label: 'Wind speed', value: this.wind, unit: this.wind_unit, threshold: 20, thresholdClass: 'bg-light-subtle', tooltip: 'Actual wind speed' },
+        { icon: 'bi bi-cloud-drizzle-fill', label: 'Rain', value: this.rain, unit: this.rain_unit, threshold: 20, thresholdClass: 'bg-info-subtle', tooltip: 'Actual rain' },
+        { icon: 'bi bi-bullseye', label: 'Visibility', value: this.visibility, unit: this.visibility_unit, threshold: 5000, thresholdClass: 'bg-success-subtle', tooltip: 'Actual visibility' },
+        { icon: 'bi bi-cloud-fill', label: 'Clouds', value: this.cloud, unit: this.cloud_unit, threshold: 80, thresholdClass: 'bg-secondary-subtle', tooltip: 'Actual cloud coverage' },
+      ],
     }
   },
   methods: {
@@ -90,64 +101,17 @@ export default {
        <p>Weather data for today.</p>
      </div>
      <div class="pt-4 row">
-       <div class="col-lg-3">
-         <div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded" :class="{ 'bg-warning-subtle': temperature > 17 }">
-         <i class="bi bi-brightness-high-fill fs-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Actual temperature"></i>
-         <p class="pt-4"><strong>Temperature:</strong></p>
-         <h4>{{ temperature }} {{ temperature_unit }}</h4>
-           </div>
-       </div><!-- /.col-lg-3 -->
-       <div class="col-lg-3">
-         <div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded" :class="{ 'bg-warning-subtle': temperature > 17 }">
-         <i class="bi bi-thermometer-half fs-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Actual temperature perception"></i>
-         <p class="pt-4"><strong>Temperature perception:</strong></p>
-         <h4>{{ ap_temperature }} {{ ap_temperature_unit }}</h4>
-           </div>
-       </div><!-- /.col-lg-3 -->
-       <div class="col-lg-3">
-         <div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded" :class="{ 'bg-primary-subtle': humidity > 70 }">
-         <i class="bi bi-droplet-half fs-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Actual humidity"></i>
-         <p class="pt-4"><strong>Humidity:</strong></p>
-         <h4>{{ humidity }} {{ humidity_unit }}</h4>
-           </div>
-       </div><!-- /.col-lg-3 -->
-       <div class="col-lg-3">
-         <div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded" :class="{ 'bg-light-subtle': snow > 100 }">
-         <i class="bi bi-snow fs-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Actual snowfall"></i>
-         <p class="pt-4"><strong>Snowfall:</strong></p>
-         <h4>{{ snow }} {{ snow_unit }}</h4>
-           </div>
-       </div><!-- /.col-lg-3 -->
-       </div>
-     <div class="row pt-4">
-       <div class="col-lg-3">
-         <div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded" :class="{ 'bg-light-subtle': wind > 20 }">
-         <i class="bi bi-wind fs-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Actual wind speed"></i>
-         <p class="pt-4"><strong>Wind speed:</strong></p>
-         <h4>{{ wind }} {{ wind_unit }}</h4>
-         </div>
-       </div><!-- /.col-lg-3 -->
-       <div class="col-lg-3">
-         <div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded" :class="{ 'bg-info-subtle': rain > 20 }">
-         <i class="bi bi-cloud-drizzle-fill fs-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Actual rain"></i>
-         <p class="pt-4"><strong>Rain:</strong></p>
-         <h4>{{ rain }} {{ rain_unit }}</h4>
-           </div>
-       </div><!-- /.col-lg-3 -->
-       <div class="col-lg-3">
-         <div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded" :class="{ 'bg-success-subtle': visibility > 5000 }">
-         <i class="bi bi-bullseye fs-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Actual visibility"></i>
-         <p class="pt-4"><strong>Visibility:</strong></p>
-         <h4>{{ visibility }} {{ visibility_unit }}</h4>
-           </div>
-       </div><!-- /.col-lg-3 -->
-       <div class="col-lg-3">
-         <div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded" :class="{ 'bg-secondary-subtle': cloud > 80 }">
-         <i class="bi bi-cloud-fill fs-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Actual cloud coverage"></i>
-         <p class="pt-4"><strong>Clouds:</strong></p>
-         <h4>{{ cloud }} {{ cloud_unit }}</h4>
-           </div>
-       </div><!-- /.col-lg-3 -->
+       <WeatherCard
+           v-for="item in weatherData"
+           :key="item.label"
+           :icon="item.icon"
+           :label="item.label"
+           :value="item.value"
+           :unit="item.unit"
+           :threshold="item.threshold"
+           :thresholdClass="item.thresholdClass"
+           :tooltip="item.tooltip"
+       />
        <p><strong>Note:</strong> Current conditions are based on 15-minutely weather data.</p>
      </div>
      <div v-if="hasError">
