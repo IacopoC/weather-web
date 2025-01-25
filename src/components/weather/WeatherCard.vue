@@ -35,7 +35,7 @@ export default {
 </script>
 
 <template>
-  <div class="col-lg-3">
+  <div class="col-lg-4">
     <div
         class="shadow-lg p-3 mb-5 bg-body-tertiary rounded" :class="thresholdClass && value > threshold ? thresholdClass : ''">
       <i :class="icon + ' fs-1'" data-bs-toggle="tooltip" data-bs-placement="top" :title="tooltip"></i>
