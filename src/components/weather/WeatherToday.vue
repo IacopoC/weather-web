@@ -38,8 +38,8 @@ export default {
         { icon: 'bi bi-cloud-drizzle-fill', label: 'Rain', value: null, unit: '', threshold: 20, thresholdClass: 'bg-info-subtle', tooltip: 'Actual rain' },
         { icon: 'bi bi-bullseye', label: 'Visibility', value: null, unit: '', threshold: 5000, thresholdClass: 'bg-success-subtle', tooltip: 'Actual visibility' },
         { icon: 'bi bi-cloud-fill', label: 'Clouds', value: null, unit: '', threshold: 80, thresholdClass: 'bg-secondary-subtle', tooltip: 'Actual cloud coverage' },
-        { icon: 'bi bi-cloud-rain-heavy-fill', label: 'Showers', value: null, unit: '', threshold: 100, thresholdClass: 'bg-success-subtle', tooltip: 'Actual visibility' },
-        { icon: 'bi bi-wind', label: 'Wind gusts 10m', value: null, unit: '', threshold: 50, thresholdClass: 'bg-secondary-subtle', tooltip: 'Actual cloud coverage' },
+        { icon: 'bi bi-cloud-rain-heavy-fill', label: 'Showers', value: null, unit: '', threshold: 100, thresholdClass: 'bg-success-subtle', tooltip: 'Actual showers' },
+        { icon: 'bi bi-wind', label: 'Wind gusts 10m', value: null, unit: '', threshold: 50, thresholdClass: 'bg-secondary-subtle', tooltip: 'Actual wind gusts' },
       ],
     }
   },
