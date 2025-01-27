@@ -7,10 +7,10 @@ export default {
   components: { GetLocation, WeatherCard },
   data() {
     return {
-      latitude: null,
-      longitude: null,
       defaultLatitude: 41.535712,
       defaultLongitude: 12.324200,
+      latitude: null,
+      longitude: null,
       isLoading: true,
       hasError: false,
       weatherData: [
@@ -91,8 +91,7 @@ export default {
        <p>Weather data for today.</p>
      </div>
      <div class="pt-4 row">
-       <WeatherCard v-for="item in weatherData" :key="item.label" :icon="item.icon" :label="item.label" :value="item.value" :unit="item.unit" :threshold="item.threshold" :thresholdClass="item.thresholdClass" :tooltip="item.tooltip"
-       />
+       <WeatherCard v-for="item in weatherData" :key="item.label" :icon="item.icon" :label="item.label" :value="item.value" :unit="item.unit" :threshold="item.threshold" :thresholdClass="item.thresholdClass" :tooltip="item.tooltip"/>
        <p><strong>Note:</strong> Current conditions are based on 15-minutely weather data.</p>
      </div>
      <div v-if="hasError">
