@@ -36,8 +36,7 @@ export default {
 
 <template>
   <div class="col-lg-4">
-    <div
-        class="shadow-lg p-3 mb-5 bg-body-tertiary rounded" :class="thresholdClass && value > threshold ? thresholdClass : ''">
+    <div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded" :class="thresholdClass && value > threshold ? thresholdClass : ''">
       <i :class="icon + ' fs-1'" data-bs-toggle="tooltip" data-bs-placement="top" :title="tooltip"></i>
       <p class="pt-4"><strong>{{ label }}:</strong></p>
       <h4>{{ value }} {{ unit }}</h4>
