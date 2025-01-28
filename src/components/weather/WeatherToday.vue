@@ -14,16 +14,18 @@ export default {
       isLoading: true,
       hasError: false,
       weatherData: [
-        { icon: 'bi bi-brightness-high-fill', label: 'Temperature', value: null, unit: '', threshold: 17, thresholdClass: 'bg-warning-subtle', tooltip: 'Actual temperature' },
+        { icon: 'bi bi-thermometer-sun', label: 'Temperature', value: null, unit: '', threshold: 17, thresholdClass: 'bg-warning-subtle', tooltip: 'Actual temperature' },
         { icon: 'bi bi-thermometer-half', label: 'Temperature perception', value: null, unit: '', threshold: 17, thresholdClass: 'bg-warning-subtle', tooltip: 'Actual temperature perception' },
         { icon: 'bi bi-droplet-half', label: 'Humidity', value: null, unit: '', threshold: 70, thresholdClass: 'bg-primary-subtle', tooltip: 'Actual humidity' },
         { icon: 'bi bi-snow', label: 'Snowfall', value: null, unit: '', threshold: 100, thresholdClass: 'bg-light-subtle', tooltip: 'Actual snowfall' },
         { icon: 'bi bi-wind', label: 'Wind speed 10m', value: null, unit: '', threshold: 20, thresholdClass: 'bg-light-subtle', tooltip: 'Actual wind speed' },
         { icon: 'bi bi-cloud-drizzle-fill', label: 'Rain', value: null, unit: '', threshold: 20, thresholdClass: 'bg-info-subtle', tooltip: 'Actual rain' },
-        { icon: 'bi bi-bullseye', label: 'Visibility', value: null, unit: '', threshold: 5000, thresholdClass: 'bg-success-subtle', tooltip: 'Actual visibility' },
+        { icon: 'bi bi-stars', label: 'Visibility', value: null, unit: '', threshold: 5000, thresholdClass: 'bg-success-subtle', tooltip: 'Actual visibility' },
         { icon: 'bi bi-cloud-fill', label: 'Clouds', value: null, unit: '', threshold: 80, thresholdClass: 'bg-secondary-subtle', tooltip: 'Actual cloud coverage' },
         { icon: 'bi bi-cloud-rain-heavy-fill', label: 'Showers', value: null, unit: '', threshold: 100, thresholdClass: 'bg-success-subtle', tooltip: 'Actual showers' },
-        { icon: 'bi bi-wind', label: 'Wind gusts 10m', value: null, unit: '', threshold: 20, thresholdClass: 'bg-secondary-subtle', tooltip: 'Actual wind gusts' },
+        { icon: 'bi bi-cloud-haze2', label: 'Wind gusts 10m', value: null, unit: '', threshold: 20, thresholdClass: 'bg-secondary-subtle', tooltip: 'Actual wind gusts' },
+        { icon: 'bi bi-globe-europe-africa', label: 'Surface pressure', value: null, unit: '', threshold: 1000, thresholdClass: 'bg-success-subtle', tooltip: 'Surface pressure' },
+        { icon: 'bi bi-signpost-2', label: 'Wind direction 10m', value: null, unit: '', threshold: 50, thresholdClass: 'bg-secondary-subtle', tooltip: 'Wind direction' },
       ],
     }
   },
@@ -39,7 +41,7 @@ export default {
     },
     fetchWeatherData(latitude, longitude) {
       this.isLoading = true;
-      fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,apparent_temperature,relative_humidity_2m,rain,visibility,wind_speed_10m,snowfall,cloud_cover,showers,wind_gusts_10m`)
+      fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,apparent_temperature,relative_humidity_2m,rain,visibility,wind_speed_10m,snowfall,cloud_cover,showers,wind_gusts_10m,surface_pressure,wind_direction_10m`)
           .then(response => response.json())
           .then(data => {
             this.weatherData[0].value = data.current['temperature_2m'];
@@ -52,6 +54,8 @@ export default {
             this.weatherData[7].value = data.current['cloud_cover'];
             this.weatherData[8].value = data.current['showers'];
             this.weatherData[9].value = data.current['wind_gusts_10m'];
+            this.weatherData[10].value = data.current['surface_pressure'];
+            this.weatherData[11].value = data.current['wind_direction_10m'];
 
             this.weatherData[0].unit = data.current_units['temperature_2m'];
             this.weatherData[1].unit = data.current_units['apparent_temperature'];
@@ -63,6 +67,8 @@ export default {
             this.weatherData[7].unit = data.current_units['cloud_cover'];
             this.weatherData[8].unit = data.current_units['showers'];
             this.weatherData[9].unit = data.current_units['wind_gusts_10m'];
+            this.weatherData[10].unit = data.current_units['surface_pressure'];
+            this.weatherData[11].unit = data.current_units['wind_direction_10m'];
           })
           .catch(error => {
             console.error('Sorry, something is wrong, an error has occurred:', error);
