@@ -15,7 +15,7 @@ export default {
       hasError: false,
       weatherData: [
         { icon: 'bi bi-thermometer-sun', label: 'Temperature', value: null, unit: '', threshold: 17, thresholdClass: 'bg-warning-subtle', tooltip: 'Actual temperature' },
-        { icon: 'bi bi-thermometer-half', label: 'Temperature perception', value: null, unit: '', threshold: 17, thresholdClass: 'bg-warning-subtle', tooltip: 'Actual temperature perception' },
+        { icon: 'bi bi-thermometer-half', label: 'Perceived Temperature', value: null, unit: '', threshold: 17, thresholdClass: 'bg-warning-subtle', tooltip: 'Actual temperature perception' },
         { icon: 'bi bi-droplet-half', label: 'Humidity', value: null, unit: '', threshold: 70, thresholdClass: 'bg-primary-subtle', tooltip: 'Actual humidity' },
         { icon: 'bi bi-snow', label: 'Snowfall', value: null, unit: '', threshold: 100, thresholdClass: 'bg-light-subtle', tooltip: 'Actual snowfall' },
         { icon: 'bi bi-wind', label: 'Wind speed 10m', value: null, unit: '', threshold: 20, thresholdClass: 'bg-light-subtle', tooltip: 'Actual wind speed' },
