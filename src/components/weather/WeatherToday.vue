@@ -83,19 +83,13 @@ export default {
 </script>
 
 <template>
-  <div v-if="isLoading">
-    <div class="h-100p" id="weathertoday"></div>
-    <h4 class="px-2">Weather Today</h4>
-    <div class="placeholder-glow">
+  <div class="h-100p" id="weathertoday"></div>
+  <div class="px-2" :class="{ 'pt-4': !isLoading }">
+    <h4>Weather Today</h4>
+    <div v-if="isLoading" class="placeholder-glow">
       <span class="placeholder col-12"></span>
     </div>
-  </div>
-   <div v-else>
-     <div class="h-100p" id="weathertoday"></div>
-     <div class="px-2 pt-4">
-       <h4>Weather Today</h4>
-       <p>Weather data for today.</p>
-     </div>
+    <p v-else>Weather data for today.</p>
      <div class="pt-4 row">
        <WeatherCard v-for="item in weatherData" :key="item.label" :icon="item.icon" :label="item.label" :value="item.value" :unit="item.unit" :threshold="item.threshold" :thresholdClass="item.thresholdClass" :tooltip="item.tooltip"/>
        <p><strong>Note:</strong> Current conditions are based on 15-minutely weather data.</p>
