@@ -34,13 +34,12 @@ default {
       this.isLoading = true;
       this.loaded = false;
 
-    fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m&temporal_resolution=hourly_6&timezone=Europe%2FBerlin`)
+    fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,wind_speed_10m&temporal_resolution=hourly_6&timezone=Europe%2FBerlin`)
      .then(response => response.json())
           .then(weatherData => {
 
         let labels = weatherData.hourly['time'];
         let temperatures = weatherData.hourly['temperature_2m'];
-        let humidity = weatherData.hourly['relative_humidity_2m'];
         let wind_speed = weatherData.hourly['wind_speed_10m'];
 
         this.chartData = {
@@ -50,13 +49,6 @@ default {
               label: 'Temperature (°C)',
               data: temperatures,
               borderColor: 'rgba(255,196,62,0.94)',
-              fill: false,
-              tension: 0.1
-            },
-            {
-              label: 'Humidity (%)',
-              data: humidity,
-              borderColor: 'rgb(19,106,232)',
               fill: false,
               tension: 0.1
             },
