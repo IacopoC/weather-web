@@ -74,18 +74,13 @@ default {
 </script>
 
 <template>
-  <div v-if="isLoading">
-    <h4 class="px-2">Weather Weekly</h4>
-    <div class="placeholder-glow">
+  <div class="h-100p" id="weatherweekly"></div>
+  <div class="px-2" :class="{ 'pt-4': !isLoading }">
+    <h4>Weather Weekly</h4>
+    <div v-if="isLoading" class="placeholder-glow">
       <span class="placeholder col-12"></span>
     </div>
-  </div>
-  <div v-else>
-  <div class="h-100p" id="weatherweekly"></div>
-  <div class="px-2 pt-4">
-  <h4>Weather Weekly</h4>
-  <p>Weather data for 7 days.</p>
-  </div>
+    <p v-else>Weather data for 7 days.</p>
   <div class="container">
     <Line v-if="loaded" :data="chartData"></Line>
   </div>
