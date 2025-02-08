@@ -5,8 +5,8 @@ This is a demo project built using Vue.js and is not a production ready website.
 
 
 ### Features
-- Today weather forecast for your current location.
-- Weekly weather forecast for your current location.
+- Today weather forecast for your current location (12 weather data points).
+- Weekly weather data for your current location (Temperature and wind data graph for 7 days).
 - Weather movies, a selection of disaster movies about weather events (10 movies).
 - Weather quotes, a quote about weather will be shown every day (10 quotes).
 
@@ -19,8 +19,7 @@ This is a demo project built using Vue.js and is not a production ready website.
 - [Google Fonts Lato](https://fonts.google.com/specimen/Lato)
 
 ### API
-- [Open Meteo](https://open-meteo.com/)
-- Open Meteo API is free with rate limits, no api key required.
+- [Open Meteo](https://open-meteo.com/) - Open Meteo API is free with rate limits, no api key required.
 
 ### Customize configuration
 
