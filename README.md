@@ -44,6 +44,3 @@ npm run dev
 npm run build
 ```
 
-### Link
-
-- [Demo](https://weatherweb.cfd/)
