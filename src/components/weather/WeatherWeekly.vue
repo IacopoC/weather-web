@@ -1,6 +1,7 @@
 <script>
 import GetLocation from "@/components/weather/GetLocation.vue";
 import { Line } from 'vue-chartjs';
+import { fetchWeeklyWeather } from "@/services/weatherService.js";
 import { Chart as ChartJS, Title, Tooltip, Legend, LineElement, CategoryScale,
   LinearScale, PointElement } from 'chart.js';
 ChartJS.register(Title, Tooltip, Legend, LineElement, CategoryScale, LinearScale, PointElement);
@@ -34,10 +35,8 @@ default {
       this.isLoading = true;
       this.loaded = false;
 
-    fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,wind_speed_10m&temporal_resolution=hourly_6&timezone=Europe%2FBerlin`)
-     .then(response => response.json())
+    fetchWeeklyWeather(latitude, longitude)
           .then(weatherData => {
-
         let labels = weatherData.hourly['time'];
         let temperatures = weatherData.hourly['temperature_2m'];
         let wind_speed = weatherData.hourly['wind_speed_10m'];

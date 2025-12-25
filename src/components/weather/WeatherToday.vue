@@ -2,6 +2,8 @@
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import GetLocation from "@/components/weather/GetLocation.vue";
 import WeatherCard from "@/components/weather/WeatherCard.vue";
+import { fetchCurrentWeather } from "@/services/weatherService.js";
+
 export default {
   name: "WeatherToday",
   components: { GetLocation, WeatherCard },
@@ -41,8 +43,7 @@ export default {
     },
     fetchWeatherData(latitude, longitude) {
       this.isLoading = true;
-      fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,apparent_temperature,relative_humidity_2m,rain,visibility,wind_speed_10m,snowfall,cloud_cover,showers,wind_gusts_10m,surface_pressure,wind_direction_10m`)
-          .then(response => response.json())
+      fetchCurrentWeather(latitude, longitude)
           .then(data => {
             this.weatherData[0].value = data.current['temperature_2m'];
             this.weatherData[1].value = data.current['apparent_temperature'];
