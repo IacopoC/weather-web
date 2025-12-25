@@ -45,31 +45,25 @@ export default {
       this.isLoading = true;
       fetchCurrentWeather(latitude, longitude)
           .then(data => {
-            this.weatherData[0].value = data.current['temperature_2m'];
-            this.weatherData[1].value = data.current['apparent_temperature'];
-            this.weatherData[2].value = data.current['relative_humidity_2m'];
-            this.weatherData[3].value = data.current['snowfall'];
-            this.weatherData[4].value = data.current['wind_speed_10m'];
-            this.weatherData[5].value = data.current['rain'];
-            this.weatherData[6].value = data.current['visibility'];
-            this.weatherData[7].value = data.current['cloud_cover'];
-            this.weatherData[8].value = data.current['showers'];
-            this.weatherData[9].value = data.current['wind_gusts_10m'];
-            this.weatherData[10].value = data.current['surface_pressure'];
-            this.weatherData[11].value = data.current['wind_direction_10m'];
+            const mapData = [
+              'temperature_2m',
+              'apparent_temperature',
+              'relative_humidity_2m',
+              'snowfall',
+              'wind_speed_10m',
+              'rain',
+              'visibility',
+              'cloud_cover',
+              'showers',
+              'wind_gusts_10m',
+              'surface_pressure',
+              'wind_direction_10m'
+            ];
 
-            this.weatherData[0].unit = data.current_units['temperature_2m'];
-            this.weatherData[1].unit = data.current_units['apparent_temperature'];
-            this.weatherData[2].unit = data.current_units['relative_humidity_2m'];
-            this.weatherData[3].unit = data.current_units['snowfall'];
-            this.weatherData[4].unit = data.current_units['wind_speed_10m'];
-            this.weatherData[5].unit = data.current_units['rain'];
-            this.weatherData[6].unit = data.current_units['visibility'];
-            this.weatherData[7].unit = data.current_units['cloud_cover'];
-            this.weatherData[8].unit = data.current_units['showers'];
-            this.weatherData[9].unit = data.current_units['wind_gusts_10m'];
-            this.weatherData[10].unit = data.current_units['surface_pressure'];
-            this.weatherData[11].unit = data.current_units['wind_direction_10m'];
+            mapData.forEach((key, index) => {
+              this.weatherData[index].value = data.current[key];
+              this.weatherData[index].unit = data.current_units[key];
+            });
           })
           .catch(error => {
             console.error('Sorry, something is wrong, an error has occurred:', error);
