@@ -41,10 +41,14 @@ export default {
       this.longitude = location.longitude;
       this.fetchWeatherData(this.latitude, this.longitude);
     },
-    fetchWeatherData(latitude, longitude) {
-      this.isLoading = true;
-      fetchCurrentWeather(latitude, longitude)
-          .then(data => {
+
+    async fetchWeatherData(latitude, longitude) {
+        this.isLoading = true;
+        this.hasError = false;
+
+      try {
+        const data = await fetchCurrentWeather(latitude, longitude)
+
             const mapData = [
               'temperature_2m',
               'apparent_temperature',
@@ -64,14 +68,14 @@ export default {
               this.weatherData[index].value = data.current[key];
               this.weatherData[index].unit = data.current_units[key];
             });
-          })
-          .catch(error => {
+
+      } catch(error) {
             console.error('Sorry, something is wrong, an error has occurred:', error);
             this.hasError = true;
-          })
-          .finally(() => {
+
+      } finally {
             this.isLoading = false;
-          });
+          }
     }
   }
 }
