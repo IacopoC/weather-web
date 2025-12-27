@@ -31,15 +31,17 @@ default {
       this.longitude = location.longitude;
       this.fetchWeatherWeeklyData(this.latitude, this.longitude);
     },
-    fetchWeatherWeeklyData(latitude, longitude) {
+
+    async fetchWeatherWeeklyData(latitude, longitude) {
       this.isLoading = true;
       this.loaded = false;
 
-    fetchWeeklyWeather(latitude, longitude)
-          .then(weatherData => {
-        let labels = weatherData.hourly['time'];
-        let temperatures = weatherData.hourly['temperature_2m'];
-        let wind_speed = weatherData.hourly['wind_speed_10m'];
+      try {
+        const weatherData = await fetchWeeklyWeather(latitude, longitude);
+
+        const labels = weatherData.hourly['time'];
+        const temperatures = weatherData.hourly['temperature_2m'];
+        const wind_speed = weatherData.hourly['wind_speed_10m'];
 
         this.chartData = {
           labels,
@@ -61,12 +63,12 @@ default {
           ]
         };
         this.loaded = true;
-      }).catch(error => {
+
+      } catch(error) {
         console.error('Sorry, something is wrong, an error has occurred:', error);
-      })
-        .finally(() => {
+      } finally {
           this.isLoading = false;
-        });
+        }
     }
   }
 };
