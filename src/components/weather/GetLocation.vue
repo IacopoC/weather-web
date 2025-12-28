@@ -10,33 +10,43 @@ export default {
       defaultLongitude: 12.324200,
     }
   },
-  mounted() {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-            (position) => {
-              this.latitude = position.coords.latitude;
-              this.longitude = position.coords.longitude;
+  methods: {
+    setDefaultLocation() {
+      this.latitude = this.defaultLatitude;
+      this.longitude = this.defaultLongitude;
+      this.$emit('location-error', this.error);
+    },
 
-              this.$emit('location-updated',
-                  { latitude: position.coords.latitude, longitude: position.coords.longitude });
-            },
-            (error) => {
-              if (error.code === error.PERMISSION_DENIED) {
-                this.error = 'Geolocation access denied. Using default location coordinates (Rome, IT)';
-              } else {
-                this.error = 'Error retrieving location: ' + error.message;
-              }
-              this.$emit('location-error', this.error);
-            }
-        );
-      } else {
-        this.error = 'Geolocation is not supported by your browser.';
-        this.latitude = this.defaultLatitude;
-        this.longitude = this.defaultLongitude;
-        this.$emit('location-error', this.error);
-      }
+    onLocationUpdated(location) {
+      this.latitude = location.latitude;
+      this.longitude = location.longitude;
+      this.$emit('location-updated', location);
     }
-}
+  },
+  mounted() {
+    if (!navigator.geolocation) {
+      this.error = 'Geolocation is not supported by your browser';
+      this.setDefaultLocation();
+    }
+
+    navigator.geolocation.getCurrentPosition(
+        (position) => {
+          this.onLocationUpdated({
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude
+          });
+        },
+        (error) => {
+          if (error.code === error.PERMISSION_DENIED) {
+            this.error = 'Geolocation access denied. Using default location coordinates (Rome, IT)';
+          } else {
+            this.error = 'Error retrieving location: ' + error.message;
+          }
+          this.setDefaultLocation();
+        }
+      );
+    }
+  }
 </script>
 
 <template>
