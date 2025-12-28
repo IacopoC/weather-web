@@ -25,6 +25,8 @@ This project was created as a **demo** to practice Vue 3 fundamentals
 ### Concepts applied in the project
 - Option API
 - Component Events
+- Async / await
+- Fetch data from api
 - Basic Chart use
 - Basic geolocation use
 
